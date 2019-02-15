@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情页面</title>
+    <link rel="shortcut icon" href="img/f.ico" />
+	<link rel="stylesheet" href="css/mi.css" type="text/css" />
+</head>
+<body>
+    <div class="nav_bg">
+        <div class="webCon clearfix navCon">
+            <ul class="navLeft">
+                <li>小米商城</li>
+                <li>MIUI</li>
+                <li>loT</li>
+                <li>云服务</li>
+                <li>金融</li>
+                <li>有品</li>
+            </ul>
+            <ul class="navRight">
+                <li>登录</li>
+                <li>注册</li>
+                <li>消息通知</li>
+                <li class="cur">购物车<div class="shoppingBox">
+                购物车中还没有商品，请添加商品
+                </div></li>
+            </ul>
+        </div>
+        <div class="webCon clearfix mTop">
+            <h1 class="logo">
+                <a href="main.do" target="_blank"  title="小米官网">小米官网</a>
+            </h1>
+            <div class="shoppingLogo">
+                <a href="#">小米发烧节</a>
+            </div>
+            <ul class="menu">
+                <li><a href="#" target="_blank">小米手机</a></li>
+                <li><a href="#" target="_blank">红米</a></li>
+                <li><a href="#" target="_blank">电视</a></li>
+                <li><a href="#" target="_blank">笔记本</a></li>
+                <li><a href="#" target="_blank">盒子</a></li>
+                <li><a href="#" target="_blank">新品</a></li>
+                <li><a href="#" target="_blank">路由器</a></li>
+                <li><a href="#" target="_blank">智能硬件</a></li>
+                <li><a href="#" target="_blank">服务</a></li>
+                <li><a href="#" target="_blank">社区</a></li>
+            </ul>
+            <div class="searchBox">
+                <div class="searchTop">
+                    <a href="#">小米8</a>
+                    <a href="#">小米MIX 2S</a>
+                </div>
+                <input class="search" type="text" />
+                <i class="iconBox iconfont">&#xe616;</i>
+                <ul class="productList">
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                    <li><span>小米6s</span><span>约有6件</span></li>
+                </ul>
+        </div>
+        <script>
+				var ipt=document.querySelector('.search'),
+				    searchtop=document.querySelector('.searchTop'),
+				    product=document.querySelector('.productList'),
+				    secrchBox=document.querySelector('.searchBox'),
+				    iconBox=document.querySelector('.iconBox');
+				    ipt.onfocus=function(){
+				    	ipt.style.borderColor='#EF7600'
+				    	searchtop.style.display='none';
+				    	product.style.display='block';
+				    	iconBox.style.borderColor='#EF7600';
+				    }
+				    ipt.onblur=function(){
+				    	searchtop.style.display='block';
+				    	product.style.display='none';
+				    	ipt.style.borderColor='#ccc';
+				    	iconBox.style.borderColor='#ccc';
+				    }	    
+			</script>
+    </div>
+    <div style="margin-top: 60px;position: relative;left: 50%;margin-left: -200px;width: 400px;height: auto;text-align: center;">
+        <% for(var i = 0; i < commodity.length; i++)  {%>
+        <img src='<%= commodity[i].img %>' style="width: 400px;height: 400px;">
+        <p style="color: red;"><%= commodity[i].name %></p>
+        <p style="color: #333333;font-size: 12px;margin: 20px;"><%= commodity[i].city %></p>
+        <i style="color: #f40;font-size: 22px;"><%= commodity[i].price %></i><del style="color: #ccc;font-size: 22px;margin-left: 20px;"><%= commodity[i].number %></del>
+        <% } %>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/Logon.css"/>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="nav-icon webCon clearfix">
+				<img class="icon"/>
+				<h2>小米商场</h2>
+				<ul class="nav-right">
+					<li>首页</li>
+					<li>淘宝</li>
+					<li>京东</li>
+					<li>阿里巴巴</li>
+					<li>1688</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="content">
+			<div class="webCon">
+				<div class="login-box clearfix">
+					<form class="form" action="/login.do" method="post" enctype="application/x-www-form-urlencoded">
+						<p>用户登录界面</p>
+						<div class="formX">
+							<span class="iconfont name">
+								&#xe6c0;
+								<input type="text" name="username" placeholder="用户名"/>
+							</span>
+							<br />
+							<span class="iconfont psw">
+								&#xe639;
+								<input type="password" name="password" placeholder="密码"/>
+							</span>
+							<br />
+							<div class="remember">
+								<input class="rememberP" type="checkbox" name="autoLogin"  checked> 
+								<span class="rememberT">记住密码</span>
+							</div>
+							<input type="submit" value="立即登录" class="ipnSbt">
+							</button>
+							<div class="register">
+								<a href="enroll.do">注册</a>
+								<a>忘记密码</a>
+							</div>
+							<p class="hint">
+								<%= locals.message !=null?message:'' %>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>	
+		</div>
+		
+		<div class="versions">
+			<p>版权所有 © 1999-2018 北京中企网动力数码科技有限公司 (简称：中企动力)   Copyright © 1999-2018 300.cn All Rights Reserved</p>
+		</div>
+	</body>
+</html>
